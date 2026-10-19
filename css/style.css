@@ -1,0 +1,500 @@
+/* ===========================================================
+   Protocolo Respira — Ayron Pontes
+   Identidade visual: Manual de Marca (paleta, tipografia, símbolo)
+   =========================================================== */
+
+:root{
+  /* Paleta oficial do manual de marca */
+  --preto: #171712;        /* Floresta Negra (suavizado p/ tela) */
+  --preto-puro: #010101;
+  --camel: #B98B5E;        /* Musgo — usado como cor de destaque/CTA */
+  --camel-escuro: #9c7249;
+  --oliva: #DCCFBF;        /* usado em superfícies suaves */
+  --caqui: #EAE2D9;        /* usado em cards/superfícies */
+  --linho: #F8F5F1;        /* fundo principal (clareado do Linho) */
+  --linho-puro: #F0EDE8;
+  --alerta: #AD4B36;       /* vermelho sóbrio para ênfase (bloco 4) */
+  --amarelo: #D9A441;      /* triângulo de alerta */
+  --texto: #2A2822;
+  --texto-suave: #5b574c;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-label: 'Poppins', Helvetica, Arial, sans-serif;
+
+  --radius: 6px;
+  --max-w: 1180px;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  font-family: var(--font-body);
+  color: var(--texto);
+  background: var(--linho);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+.container{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container--narrow{ max-width: 760px; }
+
+h1,h2,h3{
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--preto);
+  margin: 0 0 .5em;
+  line-height: 1.15;
+}
+
+p{ margin: 0 0 1em; }
+
+.eyebrow{
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+/* ---------- placeholders editáveis (preços, datas, dados) ---------- */
+.fill-me{
+  border-bottom: 1px dashed var(--camel-escuro);
+  color: var(--camel-escuro);
+  font-weight: 600;
+  padding: 0 .15em;
+}
+
+/* ---------- reveal on scroll (progressive enhancement) ----------
+   O conteúdo é sempre visível por padrão. A classe .js-reveal só é
+   adicionada via JS quando IntersectionObserver existe, então a
+   animação nunca pode deixar um bloco invisível (sem JS, sem scroll
+   disparado, impressão da página etc.). */
+.js-reveal [data-reveal]{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.js-reveal [data-reveal].is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-block;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .03em;
+  text-decoration:none;
+  text-align:center;
+  color: var(--linho);
+  background: var(--preto);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--preto);
+  cursor:pointer;
+  transition: background .25s ease, transform .15s ease, color .25s ease;
+}
+.btn:hover{ background: var(--camel-escuro); border-color: var(--camel-escuro); transform: translateY(-2px); }
+.btn--lg{ padding: 1.15rem 2.6rem; font-size: 1.05rem; }
+.btn--sm{ padding:.6rem 1.1rem; font-size:.82rem; }
+
+/* ---------- sticky CTA ---------- */
+.sticky-cta{
+  position: fixed; left:0; right:0; bottom:0; z-index: 50;
+  background: var(--preto);
+  color: var(--linho);
+  transform: translateY(100%);
+  transition: transform .35s ease;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.18);
+}
+.sticky-cta.is-visible{ transform: translateY(0); }
+.sticky-cta__inner{
+  max-width: var(--max-w);
+  margin:0 auto;
+  padding: 10px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.sticky-cta__text{ font-family: var(--font-display); font-size:1.05rem; }
+
+/* ---------- seções genéricas ---------- */
+.section{ padding: 88px 0; }
+.section__title{
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  max-width: 820px;
+}
+.section__title--center{ text-align:center; margin-left:auto; margin-right:auto; }
+
+/* =================== BLOCO 1 — HERO =================== */
+.hero{
+  background: var(--preto);
+  color: var(--linho-puro);
+  padding: 56px 0 72px;
+  text-align:center;
+}
+.brand-lockup{ margin-bottom: 48px; }
+.brand-lockup__row{
+  display:flex; align-items:center; justify-content:center; gap: 22px;
+  margin-bottom: 10px;
+}
+.brand-lockup__row .eyebrow{ color: var(--oliva); }
+.brand-lockup__symbol{ width: 40px; height: 40px; color: var(--camel); }
+.brand-lockup__name{
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  color: var(--linho-puro);
+  letter-spacing: .02em;
+  margin: 0;
+}
+.brand-lockup__tagline{
+  display:block;
+  font-family: var(--font-label);
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--oliva);
+  margin-top: 6px;
+}
+
+.hero__title{
+  color: var(--linho-puro);
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  max-width: 880px;
+  margin: 0 auto 34px;
+}
+
+.hero__points{
+  list-style:none; margin: 0 auto 56px; padding:0;
+  display:flex; flex-wrap:wrap; justify-content:center; gap: 10px 0;
+  font-family: var(--font-label);
+  font-size: .95rem;
+  letter-spacing:.02em;
+  color: var(--caqui);
+}
+.hero__points li{ padding: 0 18px; position:relative; }
+.hero__points li + li::before{
+  content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:1px; height:14px; background: var(--texto-suave);
+}
+
+.compare{
+  display:grid; grid-template-columns: 1fr 1fr;
+  max-width: 920px; margin: 0 auto;
+  border-radius: var(--radius); overflow:hidden;
+  border: 1px solid #3a3a30;
+}
+.compare__side{ padding: 34px 20px 30px; position:relative; }
+.compare__side--before{ background:#201f19; }
+.compare__side--after{ background: var(--caqui); color: var(--preto); }
+.compare__label{
+  font-family: var(--font-label); font-size:.72rem; letter-spacing:.14em;
+  text-transform:uppercase; display:block; margin-bottom: 14px;
+}
+.compare__side--before .compare__label{ color: var(--alerta); }
+.compare__side--after .compare__label{ color: var(--camel-escuro); }
+.compare__wave{ width:100%; height:56px; margin-bottom: 14px; }
+.compare__side--before .compare__wave{ stroke: var(--alerta); fill:none; stroke-width:2.5; }
+.compare__side--after .compare__wave path{ stroke: var(--camel-escuro); fill:none; stroke-width:3; }
+.compare__figure{ width:46px; height:46px; margin: 0 auto 12px; }
+.compare__figure svg{ width:100%; height:100%; fill:none; stroke-width:2.4; }
+.compare__side--before .compare__figure svg{ stroke: #9a968a; }
+.compare__side--after .compare__figure svg{ stroke: var(--preto); }
+.compare__caption{ font-size:.85rem; color:#b7b3a6; display:block; }
+.compare__side--after .compare__caption{ color:#5b5244; }
+
+/* =================== BLOCO 2 — DEPOIMENTOS =================== */
+.testimonials{ background: var(--linho-puro); }
+.testimonials__grid{
+  display:grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+  margin-top: 44px;
+}
+.testimonial-card{ margin:0; text-align:center; }
+.testimonial-card__seal{
+  display:inline-block;
+  font-family: var(--font-label); font-size:.72rem; letter-spacing:.06em;
+  text-transform:uppercase;
+  background: var(--preto); color: var(--linho);
+  padding:.45em 1em; border-radius: 999px; margin-bottom: 14px;
+}
+.testimonial-card__frame{
+  border: 1px dashed #c8bfae; border-radius: var(--radius);
+  background: var(--caqui);
+  padding: 40px 16px; min-height: 220px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+}
+.testimonial-card__placeholder-icon{ font-size: 1.8rem; opacity:.6; }
+.testimonial-card__frame p{ margin:0; font-size:.82rem; color: var(--texto-suave); }
+
+/* =================== BLOCO 3 — DOR 1 =================== */
+.pain{ background: var(--linho); }
+.pain__grid{
+  display:grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items:center;
+}
+.pain__paragraph{ font-size: 1.1rem; }
+.pain__transition{ font-family: var(--font-display); font-style: italic; font-size: 1.3rem; color: var(--preto); }
+
+.thought-figure{ position:relative; min-height: 320px; display:flex; align-items:center; justify-content:center; }
+.thought-figure__person{ width:110px; height:140px; fill:none; stroke: var(--preto); stroke-width:2.2; stroke-linecap:round; }
+.thought-figure__hand{ stroke: var(--camel-escuro); }
+.bubble{
+  position:absolute;
+  background: #fff;
+  border:1px solid #ddd3c3;
+  border-radius: 999px;
+  padding: .55em 1em;
+  font-family: var(--font-label);
+  font-size: .75rem;
+  color: var(--texto);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  max-width: 150px;
+}
+.bubble--1{ top: 4%; left: 50%; transform: translateX(-50%); }
+.bubble--2{ top: 24%; right: 2%; }
+.bubble--3{ bottom: 30%; right: 6%; }
+.bubble--4{ bottom: 6%; left: 42%; }
+.bubble--5{ top: 26%; left: 0; }
+
+/* =================== BLOCO 4 — DOR 2 =================== */
+.pain-2{ background: var(--caqui); text-align:center; }
+.pain-2__inner{ max-width: 680px; }
+.alert-triangle{ width: 64px; height: 58px; margin: 0 auto 26px; fill: rgba(217,164,65,.18); stroke: var(--amarelo); stroke-width:3.5; stroke-linejoin:round; }
+.pain-2__title{ font-size: clamp(1.7rem,3.4vw,2.3rem); }
+.pain-2__line{ font-size: 1.05rem; }
+.pain-2__alert{ color: var(--alerta); font-weight:600; font-size: 1.05rem; }
+.pain-2__close{ font-family: var(--font-display); font-style: italic; font-size: 1.25rem; margin-top: 18px; }
+
+/* =================== BLOCO 5 — CAUSA / FAIXA ESCURA =================== */
+.cause{ background: var(--linho); text-align:center; padding-bottom: 0; }
+.cause__text{ max-width: 720px; margin: 0 auto; font-size: 1.1rem; }
+
+.dark-band{
+  background: var(--preto);
+  color: var(--linho-puro);
+  text-align:center;
+  padding: 56px 24px;
+}
+.dark-band__logo{ width: 38px; height:38px; margin: 0 auto 18px; }
+.dark-band p{
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem,3vw,1.9rem);
+  margin:0;
+}
+.dark-band strong{ color: var(--camel); }
+
+/* =================== BLOCO 6 — 3 PASSOS =================== */
+.steps{ background: var(--linho-puro); }
+.steps__grid{
+  display:grid; grid-template-columns: repeat(3,1fr); gap: 32px;
+  margin-top: 48px;
+}
+.step-card{
+  background: #fff;
+  border: 1px solid #e7e0d4;
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  position:relative;
+}
+.step-card__number{
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--oliva);
+  display:block;
+  margin-bottom: 6px;
+}
+.step-card__icon{ width:44px; height:44px; margin-bottom: 16px; color: var(--camel-escuro); }
+.step-card__icon svg{ width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.step-card h3{ font-size: 1.25rem; margin-bottom: .4em; }
+.step-card p{ color: var(--texto-suave); font-size:.95rem; margin:0; }
+
+/* =================== BLOCO 7 — ENTREGÁVEIS =================== */
+.deliverables{ background: var(--linho); }
+.deliverables__list{
+  margin-top: 48px;
+  display:flex; flex-direction:column; gap: 0;
+}
+.deliverable{
+  display:grid; grid-template-columns: 56px 1fr;
+  gap: 22px; align-items:flex-start;
+  padding: 26px 0;
+  border-bottom: 1px solid #e3dccd;
+}
+.deliverable:first-child{ padding-top:0; }
+.deliverable__icon{ width:48px; height:48px; color: var(--camel-escuro); }
+.deliverable__icon svg{ width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.deliverable h3{ font-size: 1.2rem; margin: 0 0 .3em; }
+.deliverable p{ margin:0; color: var(--texto-suave); }
+.deliverable--bonus{ background: linear-gradient(90deg, rgba(185,139,94,.08), transparent); border-radius: var(--radius); padding-left:14px; padding-right:14px; }
+.tag{
+  display:inline-block; font-family: var(--font-label); font-size:.68rem;
+  letter-spacing:.08em; text-transform:uppercase; color: var(--camel-escuro);
+  border: 1px solid var(--camel-escuro); border-radius: 999px; padding: .25em .8em; margin-bottom:.5em;
+}
+
+/* =================== BLOCO 8 — É PARA VOCÊ QUE... =================== */
+.for-you{ background: var(--preto); color: var(--linho-puro); }
+.for-you .section__title{ color: var(--linho-puro); }
+.for-you__grid{ display:grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items:center; }
+.check-list{ list-style:none; margin: 28px 0; padding:0; display:flex; flex-direction:column; gap: 14px; }
+.check-list li{ position:relative; padding-left: 32px; color: var(--caqui); }
+.check-list li::before{
+  content:"✓";
+  position:absolute; left:0; top:-1px;
+  width:22px; height:22px; border-radius:50%;
+  background: var(--camel); color: var(--preto);
+  font-size:.75rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.for-you__highlight{
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.3rem; color: var(--linho-puro);
+  border-left: 3px solid var(--camel); padding-left: 18px;
+}
+
+/* =================== placeholders de imagem/foto =================== */
+.image-placeholder{
+  border: 1px dashed #c8bfae;
+  border-radius: var(--radius);
+  background: var(--caqui);
+  min-height: 320px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
+  text-align:center; padding: 24px;
+}
+.image-placeholder__icon{ font-size: 2.2rem; opacity:.6; }
+.image-placeholder p{ margin:0; font-size:.85rem; color: var(--texto-suave); max-width: 220px; }
+.for-you .image-placeholder{ background:#201f19; border-color:#4a4738; }
+.for-you .image-placeholder p{ color:#b7b3a6; }
+
+/* =================== BLOCO 9 / 13 — OFERTA =================== */
+.offer{ background: var(--linho-puro); }
+.value-stack{
+  max-width: 640px; margin: 44px auto 0;
+  background:#fff; border: 1px solid #e7e0d4; border-radius: var(--radius);
+  overflow:hidden;
+}
+.value-stack__list{ list-style:none; margin:0; padding: 28px 32px 8px; }
+.value-stack__list li{
+  display:flex; justify-content:space-between; gap:12px;
+  padding: 12px 0; border-bottom: 1px dashed #e3dccd;
+  font-size:.95rem;
+}
+.value-stack__list li:last-child{ border-bottom:none; }
+.value-stack__total{
+  background: var(--caqui);
+  text-align:center;
+  padding: 30px 28px 34px;
+}
+.value-stack__total p{ margin: 0 0 .5em; }
+.value-stack__price{
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin: 14px 0 !important;
+}
+.value-stack__reinforce{
+  font-family: var(--font-label);
+  font-weight: 600; font-size:.85rem; letter-spacing:.04em;
+  color: var(--alerta);
+  margin-bottom: 22px !important;
+}
+.secure-seal{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin-top: 18px; font-size:.8rem; color: var(--texto-suave);
+}
+.secure-seal svg{ width:18px; height:18px; fill:none; stroke: var(--camel-escuro); stroke-width:2; }
+.secure-seal__logo{ width:20px; height:20px; color: var(--camel-escuro); }
+
+.offer--final{ background: var(--preto); color: var(--linho-puro); }
+.offer--final .section__title{ color: var(--linho-puro); }
+.offer-final{ text-align:center; margin-top: 36px; }
+.offer--final .value-stack__price{ color: var(--linho-puro); }
+.offer--final .secure-seal{ color: var(--oliva); }
+
+/* =================== BLOCO 10 — COMO VOCÊ RECEBE =================== */
+.delivery{ background: var(--linho); }
+.delivery__grid{
+  display:grid; grid-template-columns: repeat(3,1fr); gap: 32px;
+  margin-top: 48px; text-align:center;
+}
+.delivery-step svg{ width:44px; height:44px; fill:none; stroke: var(--camel-escuro); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin: 0 auto 16px; }
+.delivery-step h3{ font-size: 1.1rem; }
+.delivery-step p{ color: var(--texto-suave); font-size:.92rem; }
+
+/* =================== BLOCO 11 — ME RESPONDA A VERDADE =================== */
+.truth{ background: var(--caqui); text-align:center; }
+.truth__title{ font-size: clamp(1.7rem,3.4vw,2.3rem); }
+.truth__text p{ font-size: 1.08rem; }
+.truth__close{ font-family: var(--font-display); font-style:italic; font-size: 1.35rem; color: var(--preto); margin-top: 1.4em; }
+
+/* =================== BLOCO 12 — AUTOR =================== */
+.author{ background: var(--linho-puro); }
+.author__grid{ display:grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items:center; }
+.author__quote{ font-family: var(--font-display); font-style:italic; font-size: 1.25rem; color: var(--preto); }
+.author__social{
+  display:inline-block; margin-top: 10px;
+  font-family: var(--font-label); font-size:.85rem; letter-spacing:.03em;
+  color: var(--camel-escuro); text-decoration:none; border-bottom: 1px solid var(--camel-escuro);
+}
+
+/* =================== BLOCO 14 — FAQ =================== */
+.faq{ background: var(--linho); }
+.accordion{ margin-top: 40px; border-top: 1px solid #e3dccd; }
+.accordion__item{ border-bottom: 1px solid #e3dccd; }
+.accordion__trigger{
+  width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  font-family: var(--font-display); font-size: 1.15rem; color: var(--preto);
+  padding: 20px 4px; display:flex; justify-content:space-between; align-items:center; gap: 16px;
+}
+.accordion__icon{ font-family: var(--font-label); font-size:1.3rem; color: var(--camel-escuro); transition: transform .25s ease; flex-shrink:0; }
+.accordion__trigger[aria-expanded="true"] .accordion__icon{ transform: rotate(45deg); }
+.accordion__panel{
+  max-height:0; overflow:hidden; transition: max-height .3s ease;
+}
+.accordion__panel p{ padding: 0 4px 20px; color: var(--texto-suave); margin:0; }
+
+/* =================== BLOCO 15 — RODAPÉ =================== */
+.footer{ background: var(--preto); color: var(--caqui); padding: 56px 0 40px; }
+.footer__inner{ text-align:center; }
+.footer__logo{ width:30px; height:30px; margin: 0 auto 16px; color: var(--camel); }
+.footer p{ font-size:.85rem; margin: 0 0 .6em; }
+.footer .footer__disclaimer{ font-size:.75rem; color: #8b8777; max-width: 640px; margin: .6em auto 0; }
+
+/* folga para a barra fixa de CTA, que fica visível também sobre o rodapé */
+.footer{ padding-bottom: calc(40px + 80px); }
+
+/* ===========================================================
+   RESPONSIVO
+   =========================================================== */
+@media (max-width: 860px){
+  .section{ padding: 64px 0; }
+  .pain__grid,
+  .for-you__grid,
+  .author__grid{ grid-template-columns: 1fr; }
+  .author__grid{ display:flex; flex-direction:column-reverse; }
+  .compare{ grid-template-columns: 1fr; }
+  .testimonials__grid,
+  .steps__grid,
+  .delivery__grid{ grid-template-columns: 1fr; }
+  .thought-figure{ min-height: 360px; }
+  .bubble{ max-width: 130px; font-size:.7rem; }
+}
+
+@media (max-width: 480px){
+  .brand-lockup__row{ gap: 12px; }
+  .hero__points li{ padding: 0 10px; }
+  .value-stack__list{ padding: 22px 20px 6px; }
+  .value-stack__total{ padding: 26px 18px 30px; }
+}
