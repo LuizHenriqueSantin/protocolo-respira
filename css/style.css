@@ -198,7 +198,7 @@ p{ margin: 0 0 1em; }
   border-radius: var(--radius); overflow:hidden;
   border: 1px solid #3a3a30;
 }
-.compare__side{ padding: 22px 20px 26px; position:relative; }
+.compare__side{ padding: 22px 20px 24px; position:relative; }
 .compare__side--before{ background:#201f19; }
 .compare__side--after{ background: var(--caqui); color: var(--preto); }
 .compare__label{
@@ -207,7 +207,7 @@ p{ margin: 0 0 1em; }
 }
 .compare__side--before .compare__label{ color: var(--alerta); }
 .compare__side--after .compare__label{ color: var(--camel-escuro); }
-.compare__photo{ border-radius: var(--radius); overflow:hidden; aspect-ratio: 4/5; margin-bottom: 14px; }
+.compare__photo{ border-radius: var(--radius); overflow:hidden; aspect-ratio: 4/5; margin-bottom: 24px; }
 .compare__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .compare__wave{ width:100%; height:32px; margin-bottom: 0; }
 .compare__side--before .compare__wave{ stroke: var(--alerta); fill:none; stroke-width:2.5; }
