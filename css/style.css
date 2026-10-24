@@ -528,4 +528,8 @@ p{ margin: 0 0 1em; }
   .testimonial-carousel__row{ gap: 0; }
   .carousel-btn{ display:none; }
   .testimonial-card__seal{ font-size:.6rem; padding:.4em .8em; margin-bottom: 10px; }
+
+  /* pilha de valor: rótulo e preço não cabem lado a lado sem quebrar
+     de forma desalinhada, então empilha (preço embaixo, à esquerda) */
+  .value-stack__list li{ flex-direction:column; align-items:flex-start; gap:2px; }
 }
