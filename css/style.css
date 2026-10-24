@@ -216,10 +216,11 @@ p{ margin: 0 0 1em; }
 /* =================== BLOCO 2 — DEPOIMENTOS =================== */
 .testimonials{ background: var(--linho-puro); }
 .testimonials__grid{
-  display:flex; flex-direction:column; align-items:center; gap: 32px;
-  margin-top: 44px;
+  display:grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+  margin-top: 44px; justify-items:center;
 }
-.testimonial-card{ margin:0; text-align:center; max-width: 620px; width:100%; }
+.testimonials__grid .testimonial-card:last-child:nth-child(odd){ grid-column: 1 / -1; }
+.testimonial-card{ margin:0; text-align:center; max-width: 480px; width:100%; }
 .testimonial-card__seal{
   display:inline-block;
   font-family: var(--font-label); font-size:.72rem; letter-spacing:.06em;
@@ -491,6 +492,7 @@ p{ margin: 0 0 1em; }
   .author__grid{ grid-template-columns: 1fr; }
   .author__grid{ display:flex; flex-direction:column-reverse; }
   .compare{ grid-template-columns: 1fr; }
+  .testimonials__grid,
   .steps__grid,
   .delivery__grid{ grid-template-columns: 1fr; }
   .thought-figure{ min-height: 360px; }
