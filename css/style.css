@@ -238,6 +238,12 @@ p{ margin: 0 0 1em; }
 .testimonial-card__placeholder-icon{ font-size: 1.8rem; opacity:.6; }
 .testimonial-card__frame p{ margin:0; font-size:.82rem; color: var(--texto-suave); }
 
+.testimonial-card__photo{
+  border-radius: var(--radius); overflow:hidden; border: 1px solid #e3dccd;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.testimonial-card__photo img{ width:100%; height:auto; display:block; }
+
 /* =================== BLOCO 3 — DOR 1 =================== */
 .pain{ background: var(--linho); }
 .pain__grid{
