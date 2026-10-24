@@ -209,11 +209,9 @@ p{ margin: 0 0 1em; }
 .compare__side--after .compare__label{ color: var(--camel-escuro); }
 .compare__photo{ border-radius: var(--radius); overflow:hidden; aspect-ratio: 4/5; margin-bottom: 14px; }
 .compare__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-.compare__wave{ width:100%; height:32px; margin-bottom: 10px; }
+.compare__wave{ width:100%; height:32px; margin-bottom: 0; }
 .compare__side--before .compare__wave{ stroke: var(--alerta); fill:none; stroke-width:2.5; }
 .compare__side--after .compare__wave path{ stroke: var(--camel-escuro); fill:none; stroke-width:3; }
-.compare__caption{ font-size:.85rem; color:#b7b3a6; display:block; }
-.compare__side--after .compare__caption{ color:#5b5244; }
 
 /* =================== BLOCO 2 — DEPOIMENTOS =================== */
 .testimonials{ background: var(--linho-puro); }
