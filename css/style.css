@@ -284,7 +284,7 @@ p{ margin: 0 0 1em; }
 .pain-2__close{ font-family: var(--font-display); font-style: italic; font-size: 1.25rem; margin-top: 18px; }
 
 /* =================== BLOCO 5 — CAUSA / FAIXA ESCURA =================== */
-.cause{ background: var(--linho); text-align:center; padding-bottom: 0; }
+.cause{ background: var(--linho); text-align:center; }
 .cause__text{ max-width: 720px; margin: 0 auto; font-size: 1.1rem; }
 
 .dark-band{
