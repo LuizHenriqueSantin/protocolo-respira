@@ -70,25 +70,42 @@
 <section class="section testimonials" aria-labelledby="depo-title">
   <div class="container">
     <h2 id="depo-title" class="section__title section__title--center" data-reveal>Veja o que as pessoas estão dizendo depois de usar os áudios</h2>
-    <div class="testimonials__grid">
-      <figure class="testimonial-card" data-reveal>
-        <span class="testimonial-card__seal">Ajudou a controlar a ansiedade</span>
-        <div class="testimonial-card__photo">
-          <img src="assets/depoimento1.jpg" alt="Print de avaliação: Cibeli Giroleta, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
+    <div class="testimonial-carousel" data-reveal>
+      <div class="testimonial-carousel__row">
+        <button class="carousel-btn carousel-btn--prev" type="button" aria-label="Depoimento anterior">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="testimonial-carousel__viewport">
+          <div class="testimonial-carousel__track" id="testimonialTrack" aria-live="polite">
+            <figure class="testimonial-card">
+              <span class="testimonial-card__seal">Ajudou a controlar a ansiedade</span>
+              <div class="testimonial-card__photo">
+                <img src="assets/depoimento1.jpg" alt="Print de avaliação: Cibeli Giroleta, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
+              </div>
+            </figure>
+            <figure class="testimonial-card">
+              <span class="testimonial-card__seal">Saiu do ciclo vicioso</span>
+              <div class="testimonial-card__photo">
+                <img src="assets/depoimento2.jpg" alt="Print de avaliação: Mariana Corrêa, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
+              </div>
+            </figure>
+            <figure class="testimonial-card">
+              <span class="testimonial-card__seal">Menos stress no dia a dia</span>
+              <div class="testimonial-card__photo">
+                <img src="assets/depoimento3.jpg" alt="Print de avaliação: André Floriani, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
+              </div>
+            </figure>
+          </div>
         </div>
-      </figure>
-      <figure class="testimonial-card" data-reveal>
-        <span class="testimonial-card__seal">Saiu do ciclo vicioso</span>
-        <div class="testimonial-card__photo">
-          <img src="assets/depoimento2.jpg" alt="Print de avaliação: Mariana Corrêa, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
-        </div>
-      </figure>
-      <figure class="testimonial-card" data-reveal>
-        <span class="testimonial-card__seal">Menos stress no dia a dia</span>
-        <div class="testimonial-card__photo">
-          <img src="assets/depoimento3.jpg" alt="Print de avaliação: André Floriani, 5 estrelas, sobre o atendimento do Ayron" loading="lazy">
-        </div>
-      </figure>
+        <button class="carousel-btn carousel-btn--next" type="button" aria-label="Próximo depoimento">
+          <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="carousel-dots" id="testimonialDots">
+        <button class="carousel-dot is-active" type="button" data-index="0" aria-label="Ir para depoimento 1"></button>
+        <button class="carousel-dot" type="button" data-index="1" aria-label="Ir para depoimento 2"></button>
+        <button class="carousel-dot" type="button" data-index="2" aria-label="Ir para depoimento 3"></button>
+      </div>
     </div>
   </div>
 </section>
