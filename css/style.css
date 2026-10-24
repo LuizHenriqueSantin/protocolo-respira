@@ -215,11 +215,12 @@ p{ margin: 0 0 1em; }
 
 /* =================== BLOCO 2 — DEPOIMENTOS =================== */
 .testimonials{ background: var(--linho-puro); }
+.testimonials .container{ max-width: 1420px; }
 .testimonials__grid{
   display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
   margin-top: 44px; justify-items:center;
 }
-.testimonial-card{ margin:0; text-align:center; max-width: 400px; width:100%; }
+.testimonial-card{ margin:0; text-align:center; max-width: 440px; width:100%; }
 .testimonial-card__seal{
   display:inline-block;
   font-family: var(--font-label); font-size:.72rem; letter-spacing:.06em;
@@ -239,7 +240,7 @@ p{ margin: 0 0 1em; }
 .testimonial-card__photo{
   border-radius: var(--radius); overflow:hidden; border: 1px solid #e3dccd;
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  aspect-ratio: 4 / 1.05;
+  aspect-ratio: 4 / 1.2;
 }
 .testimonial-card__photo img{ width:100%; height:100%; object-fit:fill; display:block; }
 
