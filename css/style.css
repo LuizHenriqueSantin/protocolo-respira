@@ -198,7 +198,7 @@ p{ margin: 0 0 1em; }
   border-radius: var(--radius); overflow:hidden;
   border: 1px solid #3a3a30;
 }
-.compare__side{ padding: 34px 20px 30px; position:relative; }
+.compare__side{ padding: 22px 20px 26px; position:relative; }
 .compare__side--before{ background:#201f19; }
 .compare__side--after{ background: var(--caqui); color: var(--preto); }
 .compare__label{
@@ -207,13 +207,11 @@ p{ margin: 0 0 1em; }
 }
 .compare__side--before .compare__label{ color: var(--alerta); }
 .compare__side--after .compare__label{ color: var(--camel-escuro); }
-.compare__wave{ width:100%; height:56px; margin-bottom: 14px; }
+.compare__photo{ border-radius: var(--radius); overflow:hidden; aspect-ratio: 4/5; margin-bottom: 14px; }
+.compare__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.compare__wave{ width:100%; height:32px; margin-bottom: 10px; }
 .compare__side--before .compare__wave{ stroke: var(--alerta); fill:none; stroke-width:2.5; }
 .compare__side--after .compare__wave path{ stroke: var(--camel-escuro); fill:none; stroke-width:3; }
-.compare__figure{ width:46px; height:46px; margin: 0 auto 12px; }
-.compare__figure svg{ width:100%; height:100%; fill:none; stroke-width:2.4; }
-.compare__side--before .compare__figure svg{ stroke: #9a968a; }
-.compare__side--after .compare__figure svg{ stroke: var(--preto); }
 .compare__caption{ font-size:.85rem; color:#b7b3a6; display:block; }
 .compare__side--after .compare__caption{ color:#5b5244; }
 
@@ -248,9 +246,12 @@ p{ margin: 0 0 1em; }
 .pain__paragraph{ font-size: 1.1rem; }
 .pain__transition{ font-family: var(--font-display); font-style: italic; font-size: 1.3rem; color: var(--preto); }
 
-.thought-figure{ position:relative; min-height: 320px; display:flex; align-items:center; justify-content:center; }
-.thought-figure__person{ width:110px; height:140px; fill:none; stroke: var(--preto); stroke-width:2.2; stroke-linecap:round; }
-.thought-figure__hand{ stroke: var(--camel-escuro); }
+.thought-figure{ position:relative; min-height: 360px; display:flex; align-items:center; justify-content:center; }
+.thought-figure__photo{
+  width: 230px; height: 230px; border-radius: var(--radius); overflow:hidden;
+  box-shadow: 0 14px 34px rgba(0,0,0,.14);
+}
+.thought-figure__photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 .bubble{
   position:absolute;
   background: #fff;
