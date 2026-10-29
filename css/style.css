@@ -497,6 +497,8 @@ p{ margin: 0 0 1em; }
 .footer__logo{ width:30px; height:30px; margin: 0 auto 16px; color: var(--camel); }
 .footer p{ font-size:.85rem; margin: 0 0 .6em; }
 .footer .footer__disclaimer{ font-size:.75rem; color: #8b8777; max-width: 640px; margin: .6em auto 0; }
+.footer a{ color: var(--camel); text-decoration: underline; text-underline-offset: 2px; }
+.footer a:hover{ color: var(--linho-puro); }
 
 /* folga para a barra fixa de CTA, que fica visível também sobre o rodapé */
 .footer{ padding-bottom: calc(40px + 80px); }
