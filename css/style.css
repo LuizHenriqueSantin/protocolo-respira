@@ -407,10 +407,17 @@ p{ margin: 0 0 1em; }
   padding: 30px 28px 34px;
 }
 .value-stack__total p{ margin: 0 0 .5em; }
-.value-stack__price{
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  margin: 14px 0 !important;
+.value-stack__price{ margin: 14px 0 !important; }
+.value-stack__price-installment{
+  display:block;
+  font-family: var(--font-label);
+  font-weight: 700; font-size: 1.9rem; letter-spacing: .01em;
+}
+.value-stack__price-cash{
+  display:block; margin-top: 4px;
+  font-family: var(--font-label);
+  font-weight: 500; font-size: 1rem; letter-spacing: .02em;
+  color: var(--texto-suave);
 }
 .value-stack__reinforce{
   font-family: var(--font-label);
@@ -428,7 +435,8 @@ p{ margin: 0 0 1em; }
 .offer--final{ background: var(--preto); color: var(--linho-puro); }
 .offer--final .section__title{ color: var(--linho-puro); }
 .offer-final{ text-align:center; margin-top: 36px; }
-.offer--final .value-stack__price{ color: var(--linho-puro); }
+.offer--final .value-stack__price-installment{ color: var(--linho-puro); }
+.offer--final .value-stack__price-cash{ color: var(--oliva); }
 .offer--final .secure-seal{ color: var(--oliva); }
 
 /* =================== BLOCO 10 — COMO VOCÊ RECEBE =================== */
